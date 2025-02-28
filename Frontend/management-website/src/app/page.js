@@ -1,10 +1,13 @@
-import Image from "next/image";
+
+import Navbar from "@/components/Navbar";
+import RentalCard from "@/components/RentalCard";
 
 export default function Home() {
   return (
-    <div>
-      <h1> Hello </h1>
-      <p>{"I <3 Jobey"}</p>
-    </div> 
+    <>
+
+      <Navbar />
+      <RentalCard />
+    </>
   );
 }

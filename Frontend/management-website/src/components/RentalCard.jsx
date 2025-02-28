@@ -1,0 +1,72 @@
+'use client';
+import Image from "next/image"
+import bed from "../../public/bed.svg"
+import bath from "../../public/bath.svg"
+import dog from "../../public/dog.svg"
+import cat from "../../public/cat.svg"
+
+export default function RentalCard(){
+  const fullAddress = "8503 East Monte Cristo Rd, Edinburg, TX 78542"
+  const halfAddress = "8503 East Monte Cristo Rd"
+  const numberOfBeds = 2
+  const numberOfBaths = 2
+  const petsAllowed = "OK"
+  const Available = ["Available", "Now"]
+  const price = "$900"
+
+  return(
+    <>
+      <div className="Card flex items-center flex-col">
+        <div className="RentalImage bg-black w-72 h-56 flex flex-col justify-between shadow-xl">
+          <h1 className="text-white">Image Goes Here</h1>
+          <h1 className="text-white">{fullAddress}</h1>
+        </div>
+
+        <div className="CardDetails bg-white w-72 h-40 shadow-xl">
+          <div className="pricing-info flex">
+            <h1 className="text-red-600 pr-3">Rent:</h1>
+            <h1 className="text-red-600 font-bold">{price}</h1>
+            
+          </div>
+          <div className="apartment-info flex flex-row justify-evenly items-center text-center pt-5">
+            <div className="bed flex flex-col text-center items-center">
+              <Image src={bed} alt="Bed image" width={35} height={30}></Image>
+              <p1 className="text-xs pt-1">{numberOfBeds} beds</p1>
+            </div>
+            <div className="bath flex flex-col text-center items-center">
+              <Image src={bath} alt="Bed image" width={30} height={30}></Image>
+              <p1 className=" text-xs pt-1">{numberOfBaths} baths </p1>
+            </div>
+            <div className="pet flex flex-col text-center items-center">
+              <div className="flex flex-row">
+                <Image src={dog} alt="Bed image" width={30} height={30}></Image>
+                <Image src={cat} alt="Bed image" width={30} height={30}></Image>
+              </div>
+              <p1 className="text-xs pt-1">{petsAllowed}</p1>
+            </div>
+          </div>
+          <div className="pt-4">
+            <p1 className="text-xs">{halfAddress}</p1>
+          </div>
+          <div className="flex flex-row">
+            <p1 className="text-sm pr-2">{Available[0]}</p1>
+            <p1 className=" text-sm font-bold">{Available[1]}</p1>
+          </div>
+        </div>
+
+        <div className="Buttons w-72 flex flex-row justify-evenly shadow-xl mb-8">
+          <div>
+            <a href="">
+              <button className=" bg-slate-400 hover:bg-slate-600 text-white font-bold py-2 px-7">View Details</button>
+            </a>
+          </div>
+          <div>
+            <a href="">
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-7">Apply Now</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
