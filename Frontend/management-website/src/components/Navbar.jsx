@@ -1,12 +1,8 @@
 'use client';
 
-import Image from "next/image"
-
-
 export default function Navbar(){
 
 
-  const image = "<Image priority src={FMLogo} alt=FariasManagementLogo/>"
   return (
     <>
       <nav className="w-full pt-8 pb-12">

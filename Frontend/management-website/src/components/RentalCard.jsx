@@ -7,28 +7,25 @@ import cat from "../../public/cat.svg"
 
 export default function RentalCard(){
   const fullAddress = "8503 East Monte Cristo Rd, Edinburg, TX 78542"
-  const halfAddress = "8503 East Monte Cristo Rd"
   const numberOfBeds = 2
   const numberOfBaths = 2
   const petsAllowed = "OK"
   const Available = ["Available", "Now"]
   const price = "$900"
-
   return(
     <>
       <div className="Card flex items-center flex-col">
-        <div className="RentalImage bg-black w-72 h-56 flex flex-col justify-between shadow-xl">
+        <div className="RentalImage relative bg-black w-72 h-56 flex flex-col justify-between shadow-xl pl-1 pr-1">
           <h1 className="text-white">Image Goes Here</h1>
-          <h1 className="text-white">{fullAddress}</h1>
+          <h1 className="absolute bottom-1 left-1 right-1 bg-black/70 text-white text-xs font-semibold p-2 rounded ">{fullAddress}</h1>
         </div>
 
-        <div className="CardDetails bg-white w-72 h-40 shadow-xl">
-          <div className="pricing-info flex">
-            <h1 className="text-red-600 pr-3">Rent:</h1>
-            <h1 className="text-red-600 font-bold">{price}</h1>
-            
+        <div className="CardDetails bg-white w-72 h-36 shadow-xl">
+          <div className="pricing-info flex pl-1">
+            <h1 className="pr-3">Rent:</h1>
+            <h1 className="font-bold">{price}</h1>
           </div>
-          <div className="apartment-info flex flex-row justify-evenly items-center text-center pt-5">
+          <div className="apartment-info flex flex-row justify-evenly items-center text-center pt-6 pb-6">
             <div className="bed flex flex-col text-center items-center">
               <Image src={bed} alt="Bed image" width={35} height={30}></Image>
               <p1 className="text-xs pt-1">{numberOfBeds} beds</p1>
@@ -44,9 +41,6 @@ export default function RentalCard(){
               </div>
               <p1 className="text-xs pt-1">{petsAllowed}</p1>
             </div>
-          </div>
-          <div className="pt-4">
-            <p1 className="text-xs">{halfAddress}</p1>
           </div>
           <div className="flex flex-row">
             <p1 className="text-sm pr-2">{Available[0]}</p1>
