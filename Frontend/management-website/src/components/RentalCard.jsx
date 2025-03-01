@@ -5,34 +5,31 @@ import bath from "../../public/bath.svg"
 import dog from "../../public/dog.svg"
 import cat from "../../public/cat.svg"
 
-export default function RentalCard(){
-  const fullAddress = "8503 East Monte Cristo Rd, Edinburg, TX 78542"
-  const numberOfBeds = 2
-  const numberOfBaths = 2
+export default function RentalCard({rental}){
   const petsAllowed = "OK"
   const Available = ["Available", "Now"]
-  const price = "$900"
+
   return(
     <>
       <div className="Card flex items-center flex-col">
         <div className="RentalImage relative bg-black w-72 h-56 flex flex-col justify-between shadow-xl pl-1 pr-1">
           <h1 className="text-white">Image Goes Here</h1>
-          <h1 className="absolute bottom-1 left-1 right-1 bg-black/70 text-white text-xs font-semibold p-2 rounded ">{fullAddress}</h1>
+          <h1 className="absolute bottom-1 left-1 right-1 bg-black/70 text-white text-xs font-semibold p-2 rounded ">{rental.Apartment}</h1>
         </div>
 
         <div className="CardDetails bg-white w-72 h-36 shadow-xl">
           <div className="pricing-info flex pl-1">
             <h1 className="pr-3">Rent:</h1>
-            <h1 className="font-bold">{price}</h1>
+            <h1 className="font-bold">{rental.Pricing}</h1>
           </div>
           <div className="apartment-info flex flex-row justify-evenly items-center text-center pt-6 pb-6">
             <div className="bed flex flex-col text-center items-center">
               <Image src={bed} alt="Bed image" width={35} height={30}></Image>
-              <p1 className="text-xs pt-1">{numberOfBeds} beds</p1>
+              <p1 className="text-xs pt-1">{rental.Bed} beds</p1>
             </div>
             <div className="bath flex flex-col text-center items-center">
               <Image src={bath} alt="Bed image" width={30} height={30}></Image>
-              <p1 className=" text-xs pt-1">{numberOfBaths} baths </p1>
+              <p1 className=" text-xs pt-1">{rental.Bath} baths </p1>
             </div>
             <div className="pet flex flex-col text-center items-center">
               <div className="flex flex-row">

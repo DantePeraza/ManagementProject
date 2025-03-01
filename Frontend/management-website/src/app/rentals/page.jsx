@@ -2,6 +2,7 @@
 import Navbar from "@/components/Navbar";
 import RentalCard from "@/components/RentalCard";
 import { motion } from "framer-motion";
+import{ useState, useEffect } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -27,6 +28,22 @@ const cardVariants = {
 };
 
 export default function Rentals() {
+  const [rentals, setRentals] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/rentals');
+        const rentals_data = await response.json();
+        setRentals(rentals_data || []); 
+        console.log(rentals_data)
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -34,12 +51,12 @@ export default function Rentals() {
         variants={containerVariants}
         initial="hidden"
         animate="show"
-        className="Card flex items-center flex-col"
+        className="Card flex flex-center flex-col"
       >
         <div className="container-none flex justify-evenly flex-wrap">
-          {[...Array(4)].map((_, i) => (
-            <motion.div key={i} variants={cardVariants} custom={i}>
-              <RentalCard />
+          {rentals.map((rental, i) => (
+            <motion.div key={rental.ApartmentID } variants={cardVariants} custom={i}>
+              <RentalCard rental={rental} />
             </motion.div>
           ))}
         </div>
