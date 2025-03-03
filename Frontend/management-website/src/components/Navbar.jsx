@@ -1,29 +1,35 @@
-'use client';
+"use client";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== "/") return;
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, [pathname]);
 
-  const scrollToGallery = (e) => {
+  const handleGalleryClick = (e) => {
     e.preventDefault();
-    const gallerySection = document.getElementById("gallery");
-    if (gallerySection) {
-      gallerySection.scrollIntoView({ behavior: "smooth" });
+  
+    if (pathname === "/") {
+      const gallerySection = document.getElementById("gallery");
+      if (gallerySection) {
+        gallerySection.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.location.href = "/#gallery";
     }
   };
+  
 
   return (
     <nav
@@ -37,32 +43,63 @@ export default function Navbar() {
     >
       <ul className="list-none flex flex-row space-x-4 w-full justify-around text-center items-center py-4">
         <li>
-          <a href="/" className={`text-lg ${pathname === "/" && !isScrolled ? "text-white" : "text-black"}`}>
+          <a
+            href="/"
+            className={`text-lg ${
+              pathname === "/" && !isScrolled ? "text-white" : "text-black"
+            }`}
+          >
             Home
           </a>
         </li>
         <li>
-          <a href="#gallery" onClick={scrollToGallery} className={`text-lg ${pathname === "/" && !isScrolled ? "text-white" : "text-black"}`}>
+          <a
+            href="#gallery"
+            onClick={handleGalleryClick}
+            className={`text-lg ${
+              pathname === "/" && !isScrolled ? "text-white" : "text-black"
+            }`}
+          >
             Gallery
           </a>
         </li>
         <li>
-          <a href="/rentals" className={`text-lg ${pathname === "/" && !isScrolled ? "text-white" : "text-black"}`}>
+          <a
+            href="/rentals"
+            className={`text-lg ${
+              pathname === "/" && !isScrolled ? "text-white" : "text-black"
+            }`}
+          >
             For Rent
           </a>
         </li>
         <li>
-          <a href="/residents" className={`text-lg ${pathname === "/" && !isScrolled ? "text-white" : "text-black"}`}>
+          <a
+            href="/residents"
+            className={`text-lg ${
+              pathname === "/" && !isScrolled ? "text-white" : "text-black"
+            }`}
+          >
             Residents
           </a>
         </li>
         <li>
-          <a href="/about" className={`text-lg ${pathname === "/" && !isScrolled ? "text-white" : "text-black"}`}>
+          <a
+            href="/about"
+            className={`text-lg ${
+              pathname === "/" && !isScrolled ? "text-white" : "text-black"
+            }`}
+          >
             About
           </a>
         </li>
         <li>
-          <a href="/contact" className={`text-lg ${pathname === "/" && !isScrolled ? "text-white" : "text-black"}`}>
+          <a
+            href="/contact"
+            className={`text-lg ${
+              pathname === "/" && !isScrolled ? "text-white" : "text-black"
+            }`}
+          >
             Contact
           </a>
         </li>
