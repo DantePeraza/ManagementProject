@@ -1,5 +1,5 @@
 "use client"
-import Navbar from "@/components/Navbar";
+
 import RentalCard from "@/components/RentalCard";
 import { motion } from "framer-motion";
 import{ useState, useEffect } from "react";
@@ -46,7 +46,6 @@ export default function Rentals() {
 
   return (
     <>
-      <Navbar />
       <motion.div
         variants={containerVariants}
         initial="hidden"
