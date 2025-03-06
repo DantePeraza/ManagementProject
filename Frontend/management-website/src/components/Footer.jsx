@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { FaFacebookF, FaGoogle, FaInstagram } from 'react-icons/fa';
 

@@ -25,23 +25,23 @@ export default function RentalCard({rental}){
           <div className="apartment-info flex flex-row justify-evenly items-center text-center pt-6 pb-6">
             <div className="bed flex flex-col text-center items-center">
               <Image src={bed} alt="Bed image" width={35} height={30}></Image>
-              <p1 className="text-xs pt-1">{rental.Bed} beds</p1>
+              <p className="text-xs pt-1">{rental.Bed} beds</p>
             </div>
             <div className="bath flex flex-col text-center items-center">
               <Image src={bath} alt="Bed image" width={30} height={30}></Image>
-              <p1 className=" text-xs pt-1">{rental.Bath} baths </p1>
+              <p className=" text-xs pt-1">{rental.Bath} baths </p>
             </div>
             <div className="pet flex flex-col text-center items-center">
               <div className="flex flex-row">
                 <Image src={dog} alt="Bed image" width={30} height={30}></Image>
                 <Image src={cat} alt="Bed image" width={30} height={30}></Image>
               </div>
-              <p1 className="text-xs pt-1">{petsAllowed}</p1>
+              <p className="text-xs pt-1">{petsAllowed}</p>
             </div>
           </div>
           <div className="flex flex-row">
-            <p1 className="text-sm pr-2">{Available[0]}</p1>
-            <p1 className=" text-sm font-bold">{Available[1]}</p1>
+            <p className="text-sm pr-2">{Available[0]}</p>
+            <p className=" text-sm font-bold">{Available[1]}</p>
           </div>
         </div>
 
