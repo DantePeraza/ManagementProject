@@ -16,18 +16,18 @@ export default function DetailsBar() {
       
       <div className="mt-6 space-y-3">
         <Link href="tel:+233543201893" className="flex items-center space-x-2 text-white">
-          <Phone size={15} color="rgb(252, 113, 137)" />
+          <Phone size={15} color="rgb(253, 252, 255)" />
           <span>+(956)802-2564</span>
         </Link>
         <Link href="mailto:aljay3334@gmail.com" className="flex items-center space-x-2 text-white">
-          <Mail size={15} color="rgb(252, 113, 137)" />
+          <Mail size={15} color="rgb(253, 252, 252)" />
           <span>Jobeyfarias01@gmail.com</span>
         </Link>
       </div>
       
       <div className="relative mt-8">
-        <div className="w-12 h-12 bg-purple-700 rounded-full z-10 ml-2"></div>
-        <div className="absolute w-8 h-8 bg-pink-500 rounded-full ml-2 top-4"></div>
+        <div className="w-12 h-12 bg-blue-500 rounded-full z-10 ml-2"></div>
+        <div className="absolute w-8 h-8 bg-white rounded-full ml-2 top-4"></div>
       </div>
       
       <div className="absolute bottom-8 flex space-x-4">

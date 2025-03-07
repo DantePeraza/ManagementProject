@@ -41,7 +41,7 @@ export default function InputSide() {
           placeholder="First Last"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full text-gray-800 text-sm p-2 border-b-2 border-purple-700 outline-none"
+          className="w-full text-gray-800 text-sm p-2 border-b-2 border-blue-700 outline-none"
         />
       </div>
       <div className="w-11/12 flex flex-col space-y-4 mt-4">
@@ -52,7 +52,7 @@ export default function InputSide() {
           placeholder="sample@yahoo.com"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full text-gray-800 text-sm p-2 border-b-2 border-purple-700 outline-none"
+          className="w-full text-gray-800 text-sm p-2 border-b-2 border-blue-700 outline-none"
         />
       </div>
       <div className="w-11/12 flex flex-col space-y-4 mt-4">
@@ -63,7 +63,7 @@ export default function InputSide() {
           placeholder="+9563451932"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="w-full text-gray-800 text-sm p-2 border-b-2 border-purple-700 outline-none"
+          className="w-full text-gray-800 text-sm p-2 border-b-2 border-blue-700 outline-none"
         />
       </div>
       <div className="w-11/12 flex flex-col space-y-4 mt-4">
@@ -73,7 +73,7 @@ export default function InputSide() {
           placeholder="Write message (Please Include the Apartment #)"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full text-gray-800 text-sm p-2 border-b-2 border-purple-700 outline-none"
+          className="w-full text-gray-800 text-sm p-2 border-b-2 border-blue-700 outline-none"
         />
       </div>
       <div className="absolute bottom-5 right-5">
