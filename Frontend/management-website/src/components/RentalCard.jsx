@@ -16,7 +16,6 @@ export default function RentalCard({rental}){
           <h1 className="text-white">Image Goes Here</h1>
           <h1 className="absolute bottom-1 left-1 right-1 bg-black/70 text-white text-xs font-semibold p-2 rounded ">{rental.Apartment}</h1>
         </div>
-
         <div className="CardDetails bg-white w-72 h-36 shadow-xl">
           <div className="pricing-info flex pl-1">
             <h1 className="pr-3">Rent:</h1>
